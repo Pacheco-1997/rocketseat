@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Hiding the text</h1>
+
+    <style>
+    
+    h1{
+       opacity: 0;
+    
+    }
+    
+    </style>
+
+
+    <button onclick="criaQuadrado()">Criar quadrado</button>
+    <br>
+
+
+    <script>
+
+        
+    
+         function criaQuadrado(){
+
+               var novoQuadrado = document.createElement('div');
+               novoQuadrado.style.height = "100px";
+               novoQuadrado.style.width = "100px";
+               novoQuadrado.style.opacity = "0.3";
+               novoQuadrado.style.backgroundColor = 'red';
+               var br = document.createElement('br');
+
+
+
+               document.getElementsByTagName('body')[0].appendChild(novoQuadrado);
+               document.getElementsByTagName('body')[0].appendChild(br);
+               
+         }
+    
+    </script>
+    
+</body>
+</html>

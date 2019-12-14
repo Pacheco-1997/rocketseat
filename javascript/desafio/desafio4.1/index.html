@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" name="idade" id="idade" placeholder="Coloque sua idade">
+        <button id="enviaIdade" >Enviar</button>
+    </div>
+
+    <script>
+  
+      
+         
+         
+       
+
+         function minhaPromise(){
+            
+
+            var promise = new Promise( function(resolve,reject){
+                var idade = document.querySelector('#app input').value;
+                
+                if (idade >= 18){
+                    resolve('Maior de idade');
+                } else{
+                    reject('Menor de idade');
+                }
+            })
+
+            promise.then( function(resultado){
+                console.log(resultado);
+            } ).catch( erro => {
+                console.log(erro)
+            } )
+         }
+
+         var meuBtn = document.querySelector('#app button');
+
+         meuBtn.onclick = minhaPromise; 
+
+       var soma = () => {
+            console.log(2+2)
+       }
+
+
+
+    </script>
+</body>
+</html>
