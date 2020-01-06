@@ -1,50 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<title>Manipulando a Dom</title>
 </head>
 <body>
+	<div class="container">
+  <div id="app">
+    <button type="button" class="btn btn-success">Success</button>
+  </div>
+</div>
 
-    <h1>Hiding the text</h1>
+<script type="text/javascript">
+   var btnElement = document.querySelector('button.btn');
+   let count = 1;
 
-    <style>
-    
-    h1{
-       opacity: 0;
-    
-    }
-    
-    </style>
+btnElement.onclick = function() {
+  // Criano box maior
+  let largerBox = document.createElement("div");
+  largerBox.className = "boxL";
+  largerBox.id = "boxL-" + count;
+  largerBox.style.width = '130px';
+  largerBox.style.height = '130px';
+  largerBox.style.backgroundColor = 'black';
 
+  
 
-    <button onclick="criaQuadrado()">Criar quadrado</button>
-    <br>
+  // Cria um novo elemento box
+  let boxElement = document.createElement("div");
+  boxElement.className = "box";
+  boxElement.id = "box-" + count;
+  boxElement.style.margin
+  boxElement.style.width = '100px';
+  boxElement.style.height = '100px';
+  boxElement.style.marginTop = '50px';
+  boxElement.style.marginBottom = '50px';
+  boxElement.style.margiLeft = '50px';
+  boxElement.style.marginRight = '50px';
+  boxElement.style.backgroundColor = '#f00';
 
+  boxElement.addEventListener("mouseover", () => {
+    let newColor = getRandomColor();
 
-    <script>
+    console.log(boxElement.id + ": " + newColor);
+    boxElement.style.backgroundColor = newColor;
+  });
+ 
+  
+  // Adiciona um novo elemento box para app
+  document.getElementById('app').appendChild(largerBox);
 
-        
-    
-         function criaQuadrado(){
+   document.getElementById('boxL-'+count).appendChild(boxElement);
 
-               var novoQuadrado = document.createElement('div');
-               novoQuadrado.style.height = "100px";
-               novoQuadrado.style.width = "100px";
-               novoQuadrado.style.opacity = "0.3";
-               novoQuadrado.style.backgroundColor = 'red';
-               var br = document.createElement('br');
+  count++;
+}
 
+function getRandomColor() {
+  var color = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+  return color;
+}
 
+</script>
 
-               document.getElementsByTagName('body')[0].appendChild(novoQuadrado);
-               document.getElementsByTagName('body')[0].appendChild(br);
-               
-         }
-    
-    </script>
-    
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+	<button id="meuBtn" >Click Me</button>
+
+
+
+   <script>
+   	     
+      var meuBotao = document.querySelector('button[id=meuBtn]');
+
+      meuBotao.onclick = criaQuadrado;
+
+
+
+    function criaQuadrado(int){    
+      var novaDiv = document.createElement('div');
+      novaDiv.style.backgroundColor = "red";
+      novaDiv.style.height = "100px";
+      novaDiv.style.width = "100px";
+
+      var myBr = document.createElement('br');
+      return int 
+
+      document.getElementsByTagName('body')[0].appendChild(novaDiv);
+      document.getElementsByTagName('body')[0].appendChild(myBr);
+    }
+
+   </script>
+
+
+
+-->
